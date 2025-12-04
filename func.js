@@ -1,19 +1,27 @@
-alert("🔥 WEBSITE BỊ TẤN CÔNG QUA CDN func.js !!! 🔥");
+console.warn("⚠️ func.js đã bị hacker sửa đổi qua CDN!");
 
-document.body.innerHTML = `
-  <div style="padding: 50px; text-align: center; font-family: Arial;">
-    <h1 style="color: red; font-size: 40px;">
-      WEBSITE ĐÃ BỊ HACK !!
-    </h1>
-    <p style="font-size: 20px;">
-      File JavaScript tải từ CDN đã bị thay đổi.
-    </p>
-    <p style="margin-top: 20px; font-size: 18px;">
-      Đây là ví dụ thực tế về việc
-      <strong>KHÔNG DÙNG Subresource Integrity (SRI)</strong>.
-    </p>
+document.body.style.background = "#ffdddd";      // màu hồng nhạt (cảnh báo)
+document.body.style.transition = "background 0.6s";
+
+const warningBanner = document.createElement("div");
+warningBanner.innerHTML = `
+  <div style="
+    background: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  ">
+    ⚠️ Website bị sửa mã JS từ CDN (No SRI) ⚠️
   </div>
 `;
+
+document.body.prepend(warningBanner);
 document.addEventListener("DOMContentLoaded", () => {
   const openPopupBtn = document.getElementById("openPopupBtn");
   const closePopupBtn = document.getElementById("closePopupBtn");
@@ -125,6 +133,7 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
 
 
 
