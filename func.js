@@ -1,26 +1,3 @@
-console.warn("⚠️ func.js đã bị hacker sửa đổi qua CDN!");
-
-document.body.style.background = "#ffdddd";      // màu hồng nhạt (cảnh báo)
-document.body.style.transition = "background 0.6s";
-
-const warningBanner = document.createElement("div");
-warningBanner.innerHTML = `
-  <div style="
-    background: red;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-  ">
-    ⚠️ Website bị sửa mã JS từ CDN (No SRI) ⚠️
-  </div>
-`;
-
 document.body.prepend(warningBanner);
 document.addEventListener("DOMContentLoaded", () => {
   const openPopupBtn = document.getElementById("openPopupBtn");
@@ -133,6 +110,14 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const originalProductCount = window.product_count;
+
+  window.product_count = function () {
+    alert("⚠️ Chức năng thêm vào giỏ hàng đã bị sửa thông qua CDN (no SRI)!");
 
 
 
