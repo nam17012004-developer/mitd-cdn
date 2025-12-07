@@ -1,28 +1,49 @@
-// === HACKED BY ATTACKER - DEMO SRI ===
-document.body.style.background = "red";
-document.body.style.color = "white";
-document.body.innerHTML = `
-  <div style="
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: black;
-    color: red;
-    font-size: 80px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999999;
-    text-align: center;
-    padding: 20px;
-    font-family: Arial;
-  ">
-    HACKED BY ATTACKER!<br>
-    <span style="font-size:50px;">CDN ĐÃ BỊ CHIẾM QUYỀN</span>
-  </div>
-`;
-alert("HACKED! Website đã bị tấn công từ CDN!");
-// =====================================
+// ===== HACKED BY ATTACKER – CHẠY NGAY LẬP TỨC =====
+(() => {
+  // Đổi màu nền ngay lập tức
+  document.documentElement.style.background = "red";
+  document.body.style.background = "red";
+  document.body.style.color = "white";
+
+  // Xóa hết nội dung cũ và hiện màn hình HACKED
+  document.body.innerHTML = `
+    <div style="
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: red;
+      font-size: 90px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 999999;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      box-sizing: border-box;
+    ">
+      HACKED BY ATTACKER!<br>
+      <span style="font-size: 60px; color: yellow;">
+        CDN ĐÃ BỊ CHIẾM QUYỀN
+      </span>
+    </div>
+  `;
+
+  // Hiện alert cho chắc ăn
+  alert("HACKED! Website đã bị tấn công từ CDN!");
+
+  // Dừng mọi script khác chạy tiếp (nếu muốn)
+  throw new Error("Hacked by attacker");
+})();
+// =============================================//
+
+// Code gốc của cậu để nguyên dưới đây (không cần sửa)
+document.addEventListener("DOMContentLoaded", () => {
+  // ... toàn bộ code func.js cũ của cậu ...
+});
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -136,6 +157,7 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
 
 
 
