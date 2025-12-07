@@ -1,17 +1,26 @@
-// ========== FAKE CDN ATTACK DEMO ==========
-// File func.js đã bị attacker chỉnh sửa
+console.log("⚠️ WARNING: func.js đã bị thay đổi trên CDN! Website không dùng SRI.");
 
-console.warn("⚠️ func.js đã bị thay đổi — CDN bị tấn công!");
+// --- Chèn thông báo tấn công ---
+const attackBanner = document.createElement("div");
+attackBanner.style.position = "fixed";
+attackBanner.style.top = "0";
+attackBanner.style.left = "0";
+attackBanner.style.width = "100%";
+attackBanner.style.padding = "15px";
+attackBanner.style.background = "red";
+attackBanner.style.color = "white";
+attackBanner.style.fontSize = "20px";
+attackBanner.style.fontWeight = "bold";
+attackBanner.style.textAlign = "center";
+attackBanner.style.zIndex = "999999";
+attackBanner.innerText = "⚠️ WEBSITE ĐÃ BỊ TẤN CÔNG DO KHÔNG DÙNG SRI!";
+document.body.appendChild(attackBanner);
 
-document.body.style.background = "red";
-document.body.style.color = "white";
+// --- Sửa màu nền để dễ thấy ---
+document.body.style.backgroundColor = "#ffcccc";
 
-document.body.insertAdjacentHTML(
-    "afterbegin",
-    "<h1 style='text-align:center; padding:20px;'>⚠️ WEBSITE ĐÃ BỊ TẤN CÔNG BỞI CDN ⚠️</h1>"
-);
-
-alert("Trang web của bạn đã bị tấn công vì không dùng SRI!");
+// --- Thay đổi nội dung tiêu đề ---
+document.title = "⚠️ Website bị tấn công (Demo SRI)";
 
 
 
@@ -127,6 +136,7 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
 
 
 
