@@ -1,27 +1,37 @@
-console.log("⚠️ WARNING: func.js đã bị thay đổi trên CDN! Website không dùng SRI.");
+// ======= Giả lập CDN bị tấn công =======
+console.log("⚠️ func.js đã bị thay đổi trên CDN!");
 
-// --- Chèn thông báo tấn công ---
-const attackBanner = document.createElement("div");
-attackBanner.style.position = "fixed";
-attackBanner.style.top = "0";
-attackBanner.style.left = "0";
-attackBanner.style.width = "100%";
-attackBanner.style.padding = "15px";
-attackBanner.style.background = "red";
-attackBanner.style.color = "white";
-attackBanner.style.fontSize = "20px";
-attackBanner.style.fontWeight = "bold";
-attackBanner.style.textAlign = "center";
-attackBanner.style.zIndex = "999999";
-attackBanner.innerText = "⚠️ WEBSITE ĐÃ BỊ TẤN CÔNG DO KHÔNG DÙNG SRI!";
-document.body.appendChild(attackBanner);
+// Đảm bảo DOM tồn tại trước khi tấn công
+window.addEventListener("DOMContentLoaded", function () {
 
-// --- Sửa màu nền để dễ thấy ---
-document.body.style.backgroundColor = "#ffcccc";
+    // --- Banner tấn công ---
+    const attackBanner = document.createElement("div");
+    attackBanner.style.position = "fixed";
+    attackBanner.style.top = "0";
+    attackBanner.style.left = "0";
+    attackBanner.style.width = "100%";
+    attackBanner.style.padding = "18px";
+    attackBanner.style.background = "#ff0000";
+    attackBanner.style.color = "#fff";
+    attackBanner.style.fontSize = "22px";
+    attackBanner.style.fontWeight = "bold";
+    attackBanner.style.textAlign = "center";
+    attackBanner.style.zIndex = "999999";
+    attackBanner.innerText =
+        "⚠️ WARNING: CDN bị tấn công! File func.js đã bị thay đổi!";
+    document.body.appendChild(attackBanner);
 
-// --- Thay đổi nội dung tiêu đề ---
-document.title = "⚠️ Website bị tấn công (Demo SRI)";
+    // --- Đổi màu nền toàn trang ---
+    document.body.style.backgroundColor = "#ffe5e5";
 
+    // --- Chỉnh title trang ---
+    document.title = "⚠️ Website bị tấn công (demo SRI)";
+
+    // --- Thay nội dung tất cả heading H2 thành cảnh báo ---
+    const h2 = document.querySelectorAll("h2, h1, .text-block-3");
+    h2.forEach(el => el.innerText = "⚠️ Bị tấn công do không dùng SRI!");
+
+});
 
 
 
@@ -136,6 +146,7 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
 
 
 
