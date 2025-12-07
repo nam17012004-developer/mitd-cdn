@@ -1,32 +1,4 @@
-console.warn("⚠️ func.js trên CDN đã bị hacker sửa đổi!");
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Đổi màu nền toàn bộ trang sang đỏ nhạt
-  document.body.style.backgroundColor = "#ff4d4d"; // đỏ
-
-  // Cho chữ dễ nhìn hơn một chút
-  document.body.style.color = "#ffffff";
-
-  // Thêm một banner nhỏ ở trên đầu cho dễ demo
-  const banner = document.createElement("div");
-  banner.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px;
-      background: #b30000;
-      color: white;
-      text-align: center;
-      font-weight: bold;
-      z-index: 9999;
-    ">
-      ⚠️ Nền trang đã bị đổi màu do file JS từ CDN bị sửa (KHÔNG dùng SRI)!
-    </div>
-  `;
-  document.body.prepend(banner);
-});
 
 
 
@@ -141,6 +113,7 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
 
 
 
