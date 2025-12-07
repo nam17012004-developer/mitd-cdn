@@ -1,7 +1,4 @@
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const openPopupBtn = document.getElementById("openPopupBtn");
   const closePopupBtn = document.getElementById("closePopupBtn");
@@ -113,6 +110,7 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
 
 
 
