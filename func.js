@@ -1,7 +1,19 @@
+// ========== FAKE CDN ATTACK DEMO ==========
+// File func.js đã bị attacker chỉnh sửa
+
+console.warn("⚠️ func.js đã bị thay đổi — CDN bị tấn công!");
+
 document.body.style.background = "red";
 document.body.style.color = "white";
-document.body.innerHTML += "<h1 style='text-align:center;'>⚠️ WEBSITE ĐÃ BỊ TẤN CÔNG ⚠️</h1>";
-alert("Trang web đã bị thay đổi do CDN không có SRI!");
+
+document.body.insertAdjacentHTML(
+    "afterbegin",
+    "<h1 style='text-align:center; padding:20px;'>⚠️ WEBSITE ĐÃ BỊ TẤN CÔNG BỞI CDN ⚠️</h1>"
+);
+
+alert("Trang web của bạn đã bị tấn công vì không dùng SRI!");
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -115,6 +127,7 @@ childDivs.forEach(function (childDiv) {
     console.log(elements);
 });
 document.getElementById("total-price").textContent = Value; }
+
 
 
 
